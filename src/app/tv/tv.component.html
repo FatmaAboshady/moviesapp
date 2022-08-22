@@ -1,0 +1,31 @@
+<div class="container">
+    <p-carousel [value]="trendingTv" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+      <ng-template pTemplate="header">
+          <h2 class="text-center my-4">trending tv</h2 >
+      </ng-template>
+  
+      <ng-template let-product pTemplate="item">
+          <div class="product-item">
+              <div class="product-item-content">
+                  <div class="mb-3 position-relative ">
+                      <img [src]="imgPrefix+product.poster_path" [alt]="product.title" class="product-image" />
+                      <!-- <div class="vote bg-info p-4 position-absolute top-0 start-50">{{product.vote_average}}</div> -->
+  
+                    </div>
+                  <div>
+                      <h4 class="mb-1">{{product.name}}</h4>
+                      <h3 class="mt-0 mb-3 h6">{{product.vote_average}}</h3>
+
+                      <h3 class="mt-0 mb-3 h6 mx-3">{{product.overview | slice:0:100}}</h3>
+                      <!-- <span [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.vote_average}}</span> -->
+                      <div class="car-buttons mt-5">
+                          <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
+                          <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-video"></p-button>
+                          <p-button type="button" styleClass="p-button-help p-button-rounded " icon="pi pi-cog"></p-button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+    </p-carousel>
+  </div>

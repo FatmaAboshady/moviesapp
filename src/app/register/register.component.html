@@ -1,0 +1,142 @@
+<p>register works!</p>
+<div *ngIf="error" class="alert alert-danger">
+    <p>{{error}}</p>
+
+</div>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+
+
+    <div class="container-fluid w-25 py-3  rounded-2 border border-2 ">
+        <div class="grid p-fluid  ">
+            <!-- first name -->
+            <div class="col-12 md:col-4 mb-3">
+                <div class="p-inputgroup ">
+                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                    <input id="first-name" type="text" class="form-control" pInputText placeholder="firstName" formControlName="firstName">
+      
+                </div>
+                <div *ngIf="profileForm.get('firstName')?.errors != null && profileForm.get('firstName')?.touched ">
+                    <div *ngIf="profileForm.get('firstName')?.errors?.['required']" class="alert alert-danger d-flex align-items-center p-1 my-1" role="alert">
+                        firstName is requierd
+                      </div>
+                      
+                 </div>
+            </div>
+
+            <!-- last-name -->
+            <div class="col-12 md:col-4 mb-3">
+                <div class="p-inputgroup ">
+                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                    <input id="lastName" type="text" class="form-control"   pInputText placeholder="lastName" formControlName="lastName">
+      
+                </div>
+                <div *ngIf="profileForm.get('lastName')?.errors != null && profileForm.get('lastName')?.touched ">
+                    <div *ngIf="profileForm.get('lastName')?.errors?.['required']" class="alert alert-danger d-flex align-items-center p-1 my-1" role="alert">
+                        lastName is requierd
+                      </div>
+                      
+                 </div>
+            </div>
+
+            <!-- age -->
+            <div class="col-12 md:col-4 mb-3">
+                <div class="p-inputgroup ">
+                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                    <input id="age" type="text" class="form-control"   pInputText placeholder="age" formControlName="age">
+      
+                </div>
+                <div *ngIf="profileForm.get('age')?.errors != null && profileForm.get('age')?.touched ">
+                    <div *ngIf="profileForm.get('age')?.errors?.['required']" class="alert alert-danger d-flex align-items-center p-1 my-1" role="alert">
+                        age is requierd
+                      </div>
+                      
+                 </div>
+            </div>
+
+            <!-- email -->
+
+            <div class="col-12 md:col-4 mb-3">
+                <div class="p-inputgroup ">
+                    <span class="p-inputgroup-addon"><i class="pi pi-google"></i></span>
+                    <input id="email" type="text" class="form-control" pInputText placeholder="email" formControlName="email">
+      
+                </div>
+                <div *ngIf="profileForm.get('email')?.errors != null && profileForm.get('email')?.touched ">
+                    <div *ngIf="profileForm.get('email')?.errors?.['required']" class="alert alert-danger d-flex align-items-center p-1 my-1" role="alert">
+                        email is requierd
+                      </div>
+
+                      <div *ngIf="profileForm.get('email')?.errors?.['email']" class="alert alert-danger d-flex align-items-center p-1 my-1" role="alert">
+                        you must enter email 
+                      </div>
+                      
+                 </div>
+            </div>
+            <!-- password -->
+
+            <div class="col-12 md:col-4 mb-3">
+                <div class="p-inputgroup ">
+                    <span class="p-inputgroup-addon"><i class="pi pi-question"></i></span>
+                    <input id="password" type="text" class="form-control" pInputText placeholder="password" formControlName="password">
+      
+                </div>
+                <div *ngIf="profileForm.get('password')?.errors != null && profileForm.get('password')?.touched ">
+                    <div *ngIf="profileForm.get('password')?.errors?.['required']" class="alert alert-danger d-flex align-items-center p-1 my-1" role="alert">
+                        password is requierd
+                      </div>
+                      
+                 </div>
+            </div>
+            <!-- <div class="col-12 md:col-4 mb-3">
+                
+                    <input id="confirmPassword" type="text" class="form-control is-invalid "  pInputText placeholder="confirmPassword" formControlName="confirmPassword">
+                    
+                    <div  class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                 
+              
+            </div> -->
+
+
+            <!-- <p>Form Status: {{ profileForm.status }}</p> -->
+
+            
+        </div>
+        <div class="sizes">
+            <p-button label="save" type="submit" icon="pi pi-check" styleClass="p-button-sm p-button-warning" ></p-button>
+            <p-button label="clear" icon="pi pi-trash" styleClass="p-button-sm " (click)="clear()" class="m-2"></p-button>
+    
+        </div>
+
+    </div>
+
+
+    <!-- <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+  
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+
+
+    <label for="email">email: </label>
+    <input id="email" type="text" formControlName="email">
+
+    <label for="password">password </label>
+    <input id="password" type="text" formControlName="password">
+
+    <p>Form Status: {{ profileForm.status }}</p>
+
+   
+    <div class="sizes">
+        <p-button label="save" icon="pi pi-check" styleClass="p-button-sm p-button-warning" ></p-button>
+        <p-button label="clear" icon="pi pi-trash" styleClass="p-button-sm "  class="m-2"></p-button>
+
+    </div>
+    
+    -->
+    
+  
+
+  
+  </form>

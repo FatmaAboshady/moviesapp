@@ -1,0 +1,28 @@
+<p> {{id}}moviedetails works!</p>
+<div class="container d-flex justify-content-center">
+        <div class="card mb-3" style="max-width: 840px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img [src]="imgPrefix+movie?.poster_path" [alt]="" class="img-fluid rounded-start" />
+        
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{movie.original_title}}</h5>
+                  <p class="card-text">{{movie.overview}}</p>
+                  <p class="card-text my-1"><small class="text-muted">Release Date {{movie.release_date}}</small></p>
+                  
+                  
+                  <p class="card-text my-1"><small class="text-muted">vote average {{movie.vote_average}}</small></p>
+                  <p class="card-text my-1 "><small class="text-muted">vote count {{movie.vote_count}}</small></p>
+                   
+                  <a [href]="movie.homepage"  target="_blank"> <button class="btn btn-danger mt-3"> view</button></a>
+                </div>
+              </div>
+            </div>
+
+    </div>
+   
+
+</div>
+

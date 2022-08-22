@@ -1,0 +1,59 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)" >
+
+
+     <div class="container-fluid  py-3  rounded-2 border border-2 ">
+         <div class="grid p-fluid  ">
+             
+ <!-- email -->
+
+ <div class="col-12 md:col-4 mb-3">
+    <div class="p-inputgroup ">
+        <span class="p-inputgroup-addon"><i class="pi pi-google"></i></span>
+        <input id="email" type="text" class="form-control" pInputText placeholder="email" formControlName="email">
+
+    </div>
+    <div *ngIf="profileForm.get('email')?.errors != null && profileForm.get('email')?.touched ">
+        <div *ngIf="profileForm.get('email')?.errors?.['required']" class="alert alert-danger d-flex align-items-center p-1 my-1" role="alert">
+            email is requierd
+          </div>
+
+          <div *ngIf="profileForm.get('email')?.errors?.['email']" class="alert alert-danger d-flex align-items-center p-1 my-1" role="alert">
+            you must enter email 
+          </div>
+          
+     </div>
+</div>
+<!-- password -->
+
+<div class="col-12 md:col-4 mb-3">
+    <div class="p-inputgroup ">
+        <span class="p-inputgroup-addon"><i class="pi pi-question"></i></span>
+        <input id="password" type="password" class="form-control" pInputText placeholder="password" formControlName="password">
+
+    </div>
+    <div *ngIf="profileForm.get('password')?.errors != null && profileForm.get('password')?.touched ">
+        <div *ngIf="profileForm.get('password')?.errors?.['required']" class="alert alert-danger d-flex align-items-center p-1 my-1" role="alert">
+            password is requierd
+          </div>
+          
+     </div>
+</div>
+ 
+ 
+             
+         </div>
+         <div class="sizes">
+             <p-button label="log in"  type="submit" icon="pi pi-check" styleClass="p-button-sm p-button-warning" [disabled]="profileForm.invalid"></p-button>
+             <p-button label="clear" icon="pi pi-trash" styleClass="p-button-sm " (click)="clear()" class="m-2"></p-button>
+     
+         </div>
+ 
+     </div>
+ 
+ 
+    
+     
+   
+ 
+   
+   </form>
